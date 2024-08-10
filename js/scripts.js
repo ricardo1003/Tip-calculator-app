@@ -1,1 +1,5 @@
-console.log("hello world!")
+const inputsTypeNumber = [...document.getElementsByClassName("numberInput")]
+const percentageButtons = [...document.getElementsByClassName("tipPercentage")]
+const customPriceInput = [...document.getElementsByClassName("customPrice")]
+const resultTexts = [...document.getElementsByClassName("result")]
+const resetButton = document.getElementsByClassName("resetButton")[0]
