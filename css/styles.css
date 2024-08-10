@@ -16,6 +16,16 @@ body{
     padding: 2.5em 0;
 }
 
+main{
+    padding: 1.5em;
+    border-radius: 20px;
+    background-color: white;
+
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
 
 
 
