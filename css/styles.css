@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+    font-family: "Space Mono";
+    font-weight: 700;
+}
+body{
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(185, 41%, 84%);
+}
+
+
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
