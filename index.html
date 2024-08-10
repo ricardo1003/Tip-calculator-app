@@ -19,8 +19,10 @@
     <form action="">
       <label for="bill">
         Bill
-        <img src="./images/icon-dollar.svg" alt="dollar">
-        <input type="text" name="Bill" id="bill">
+        <div class="inputContainer">
+          <img src="./images/icon-dollar.svg" alt="dollar">
+          <input type="text" name="Bill" id="bill">
+        </div>
       </label>
       <fieldset>
         <legend>Select Tip %</legend>
@@ -31,9 +33,12 @@
         <button type="button" class="tipPercentage">50%</button>
         <input type="text" name="customPrice" id="custonPrice" placeholder="Custom">
       </fieldset>
-      <label for="NofPeople">Number of People
-        <img src="./images/icon-person.svg" alt="person">
-        <input type="text" name="numberOfPeople" id="NofPeople">
+      <label for="NofPeople">
+        Number of People
+        <div class="inputContainer">
+          <img src="./images/icon-person.svg" alt="person">
+          <input type="text" name="numberOfPeople" id="NofPeople">
+        </div>
       </label>
     </form>
     <div class="results">

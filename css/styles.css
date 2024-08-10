@@ -1,13 +1,13 @@
 *{
+    margin: 0;
     box-sizing: border-box;
     font-family: "Space Mono";
     font-weight: 700;
 }
 body{
     min-height: 100vh;
-    margin: 0;
     position: relative;
-    color: hsl(183, 100%, 15%);
+    color: hsl(186, 14%, 43%);
     background-color: hsl(185, 41%, 84%);
 }
 .logo{
@@ -27,8 +27,33 @@ main{
     -o-border-radius: 20px;
 }
 
-
-
+.inputContainer{
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: hsl(189, 41%, 97%);
+}
+input{
+    padding: 0 15px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    color: hsl(183, 100%, 15%);
+    font-size: 24px;
+    text-align: end;
+}
+fieldset{
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    border: none;
+}
+legend{
+    margin-bottom: 15px;
+}
 
 
 
