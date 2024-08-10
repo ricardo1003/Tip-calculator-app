@@ -10,6 +10,11 @@ body{
     color: hsl(183, 100%, 15%);
     background-color: hsl(185, 41%, 84%);
 }
+.logo{
+    display: block;
+    margin: 0 auto;
+    padding: 2.5em 0;
+}
 
 
 
@@ -19,6 +24,5 @@ body{
 
 
 
-
-.attribution { font-size: 11px; text-align: center; }
+.attribution { font-size: 11px; text-align: center; position: fixed; bottom: 0;}
 .attribution a { color: hsl(228, 45%, 44%); }
