@@ -16,7 +16,7 @@ body{
     padding: 2.5em 0;
 }
 
-main{
+main, .results{
     padding: 1.5em;
     border-radius: 20px;
     background-color: white;
@@ -28,6 +28,7 @@ main{
 }
 
 .inputContainer{
+    margin-top: .5em;
     padding-left: 10px;
     display: flex;
     align-items: center;
@@ -48,7 +49,6 @@ fieldset{
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
-    /* grid-template-rows: repeat(auto, 1fr); */
     gap: 15px;
     border: none;
 }
@@ -97,7 +97,7 @@ input:checked ~ p,
 input:focus ~ p{
     color: hsl(183, 100%, 15%);
 }
-.inputContainer, .tipPercentage{
+.inputContainer, .tipPercentage, .resetButton{
     border-radius: 7px;
 
     -webkit-border-radius: 7px;
@@ -106,5 +106,39 @@ input:focus ~ p{
     -o-border-radius: 7px;
 }
 
-.attribution { font-size: 11px; text-align: center; position: fixed; bottom: 0;}
+.results{
+    padding-top: 2em;
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: hsl(183, 100%, 15%);
+}
+.results div{
+    display: flex;
+    justify-content: space-between;
+}
+.results p:first-child{
+    display: flex;
+    flex-direction: column;
+    color: hsl(189, 41%, 97%);
+}
+.results p:first-child span{
+    font-size: .8em;
+    color: hsl(186, 14%, 43%);
+}
+.results .result{
+    color: hsl(172, 67%, 45%);
+    font-size: 2em;
+}
+
+.resetButton{
+    padding: .5rem 0;
+    border: none;
+    background-color: hsl(172, 67%, 45%);
+    font-size: 24px;
+    color: hsl(183, 100%, 15%);
+}
+
+.attribution { font-size: 11px; text-align: center; position: fixed; bottom: 0; right: 0;left: 0; background-color: #ffffff80; backdrop-filter:blur(10px);}
 .attribution a { color: hsl(228, 45%, 44%); }
