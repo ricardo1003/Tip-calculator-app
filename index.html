@@ -26,11 +26,31 @@
       </label>
       <fieldset>
         <legend>Select Tip %</legend>
-        <button type="button" class="tipPercentage">5%</button>
-        <button type="button" class="tipPercentage">10%</button>
-        <button type="button" class="tipPercentage">15%</button>
-        <button type="button" class="tipPercentage">25%</button>
-        <button type="button" class="tipPercentage">50%</button>
+        <label for="percentaje1" class="tipPercentage">
+          <input type="radio" name="percentaje" id="percentaje1">
+          <div class="background"></div>
+          <p>5%</p>
+        </label>
+        <label for="percentaje2" class="tipPercentage">
+          <input type="radio" name="percentaje" id="percentaje2">
+          <div class="background"></div>
+          <p>10%</p>
+        </label>
+        <label for="percentaje3" class="tipPercentage">
+          <input type="radio" name="percentaje" id="percentaje3">
+          <div class="background"></div>
+          <p>15%</p>
+        </label>
+        <label for="percentaje4" class="tipPercentage">
+          <input type="radio" name="percentaje" id="percentaje4">
+          <div class="background"></div>
+          <p>25%</p>
+        </label>
+        <label for="percentaje5" class="tipPercentage">
+          <input type="radio" name="percentaje" id="percentaje5">
+          <div class="background"></div>
+          <p>50%</p>
+        </label>
         <input type="text" name="customPrice" id="custonPrice" placeholder="Custom">
       </fieldset>
       <label for="NofPeople">
@@ -44,11 +64,11 @@
     <div class="results">
       <div class="tipAmount">
         <p>Tip Amount<span>/ person</span></p>
-        <p class="result"></p>
+        <p class="result">$0.00</p>
       </div>
       <div class="total">
         <p>Total<span>/ person</span></p>
-        <p class="result"></p>
+        <p class="result">$0.00</p>
       </div>
       <button type="button" class="resetButton">Reset</button>
     </div>

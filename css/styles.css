@@ -44,10 +44,11 @@ input{
     text-align: end;
 }
 fieldset{
+    margin: 2em 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+    /* grid-template-rows: repeat(auto, 1fr); */
     gap: 15px;
     border: none;
 }
@@ -55,9 +56,55 @@ legend{
     margin-bottom: 15px;
 }
 
+.tipPercentage{
+    padding: 5px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+    font-size: 24px;
+    overflow: hidden;
+}
+.tipPercentage input{
+    height: 0;
+    width: 0;
+}
+.tipPercentage p{
+    position: relative;
+    z-index: 1;
+}
+.background{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+input:hover ~ .background{
+    background-color: hsl(185, 41%, 84%);
+}
+input:hover ~ p{
+    color: hsl(183, 100%, 15%);
+}
 
+input:checked ~ .background,
+input:focus ~ .background{
+    background-color: hsl(172, 67%, 45%);
+}
+input:checked ~ p,
+input:focus ~ p{
+    color: hsl(183, 100%, 15%);
+}
+.inputContainer, .tipPercentage{
+    border-radius: 7px;
 
-
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
 
 .attribution { font-size: 11px; text-align: center; position: fixed; bottom: 0;}
 .attribution a { color: hsl(228, 45%, 44%); }
