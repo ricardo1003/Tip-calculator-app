@@ -6,22 +6,45 @@ const resetButton = document.getElementsByClassName("resetButton")[0]
 
 let selectedTip = -1
 
-let tipPerPerson = 0
-let totalTip = 0
+// let tipPerPerson = 0
+// let totalTip = 0
+
 function calculateTip(){
     let billCost = inputsTypeNumber[0].value
     let tipOptions = parseInt(percentageButtons[selectedTip].getElementsByTagName("p")[0].innerHTML.replace("%",""))
-    let NofPeople = inputsTypeNumber[2].value
-    tipPerPerson = (billCost*tipOptions/100)/NofPeople
-    totalTip = ((billCost*tipOptions/100)/NofPeople)+billCost/NofPeople
+    let NofPeople = inputsTypeNumber[1].value
 
-    console.log(tipPerPerson + " | " + totalTip)
+    let results = new Array(2).fill(0)
+
+    results[0] = (billCost*tipOptions/100)/NofPeople
+    results[1] = ((billCost*tipOptions/100)/NofPeople)+billCost/NofPeople
+
+    for(let i = 0; i<resultTexts.length;i++){
+        resultTexts[i].innerHTML = "$" + (results[i]).toFixed(2)
+    }
+    console.log(results)
 }
+
+let checked = new Array(3).fill(false)
+
+for(let i = 0; i<inputsTypeNumber.length;i++){
+    inputsTypeNumber[i].addEventListener("input", ()=>{
+        checked[i] = true
+        if(checked.indexOf(false) === -1){
+            calculateTip()
+        }
+    })
+}
+
 for(let i = 0; i<percentageButtons.length;i++){
     percentageButtons[i].addEventListener("change", ()=>{
         selectedTip = i
+        checked[2] = true
+        if(checked.indexOf(false) === -1){
+            calculateTip()
+        }
     })
 }
 
 
-calculateTip()
+// calculateTip()
