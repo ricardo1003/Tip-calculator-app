@@ -81,3 +81,15 @@ customPriceInput.addEventListener("focus",()=>{
 customPriceInput.addEventListener("blur",()=>{
     customPriceInput.classList.remove("focused")
 })
+
+
+resetButton.addEventListener("click",()=>{
+    checked = new Array(3).fill(false)
+    customPriceInput.value = ""
+    inputsTypeNumber.forEach(input =>{
+        input.value = ""
+    })
+    percentageButtons.forEach(button =>{
+        button.getElementsByTagName("input")[0].checked = false
+    })
+})
