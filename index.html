@@ -17,8 +17,9 @@
   <img src="./images/logo.svg" alt="splitter" class="logo">
   <main>
     <form action="">
-      <label for="bill">
+      <label for="bill" class="field">
         Bill
+        <p>cant be zero</p>
         <div class="inputContainer">
           <img src="./images/icon-dollar.svg" alt="dollar">
           <input type="number" name="Bill" id="bill" class="numberInput">
@@ -51,10 +52,14 @@
           <div class="background"></div>
           <p>50%</p>
         </label>
-        <input type="number" name="customPrice" id="customPrice" placeholder="Custom" class="percentageInput">
+        <label for="customPrice" id="customContainer">
+          <p>cant be zero</p>
+          <input type="number" name="customPrice" id="customPrice" placeholder="Custom" class="percentageInput">
+        </label>
       </fieldset>
-      <label for="NofPeople">
+      <label for="NofPeople" class="field">
         Number of People
+        <p>cant be zero</p>
         <div class="inputContainer">
           <img src="./images/icon-person.svg" alt="person">
           <input type="number" name="numberOfPeople" id="NofPeople" class="numberInput">

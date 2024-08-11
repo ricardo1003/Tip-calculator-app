@@ -1,5 +1,7 @@
+const fieldElements = [...document.getElementsByClassName("field")]
 const inputsTypeNumber = [...document.getElementsByClassName("numberInput")]
 const percentageButtons = [...document.getElementsByClassName("tipPercentage")]
+const customInputContainer = document.getElementById("customContainer")
 const customPriceInput = document.getElementById("customPrice")
 const resultTexts = [...document.getElementsByClassName("result")]
 const resetButton = document.getElementsByClassName("resetButton")[0]
@@ -29,10 +31,23 @@ let checked = new Array(3).fill(false)
 
 for(let i = 0; i<inputsTypeNumber.length;i++){
     inputsTypeNumber[i].addEventListener("input", ()=>{
-        checked[i] = true
-        if(checked.indexOf(false) === -1){
-            calculateTip()
+        inputsTypeNumber[i].value = Math.abs(inputsTypeNumber[i].value)
+        if(inputsTypeNumber[i].value == "0"){
+            fieldElements[i].classList.add("failed")
+            checked[i] = false
+        }else{
+            checked[i] = true
+            fieldElements[i].classList.remove("failed")
+            if(checked.indexOf(false) === -1){
+                calculateTip()
+            }
         }
+    })
+    inputsTypeNumber[i].addEventListener("focus",()=>{
+        fieldElements[i].classList.add("focused")
+    })
+    inputsTypeNumber[i].addEventListener("blur",()=>{
+        fieldElements[i].classList.remove("focused")
     })
 }
 for(let i = 0; i<percentageButtons.length;i++){
@@ -45,12 +60,24 @@ for(let i = 0; i<percentageButtons.length;i++){
     })
 }
 customPriceInput.addEventListener("input",()=>{
+    customPriceInput.value = Math.abs(customPriceInput.value)
     if(customPriceInput.value != 0){
-        if(selectedTip < 5){
+        customInputContainer.classList.remove("failed")
+        if(selectedTip != 5 && selectedTip >= 0){
             percentageButtons[selectedTip].getElementsByTagName("input")[0].checked = false
         }
         checked[2] = true
         selectedTip = 5
-        calculateTip()
+        if(checked.indexOf(false) === -1){
+            calculateTip()
+        }
+    }else{
+        customInputContainer.classList.add("failed")
     }
+})
+customPriceInput.addEventListener("focus",()=>{
+    customPriceInput.classList.add("focused")
+})
+customPriceInput.addEventListener("blur",()=>{
+    customPriceInput.classList.remove("focused")
 })

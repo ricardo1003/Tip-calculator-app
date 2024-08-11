@@ -26,7 +26,9 @@ main, .results{
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
 }
-
+button, .tipPercentage{
+    cursor: pointer;
+}
 .inputContainer{
     margin-top: .5em;
     padding-left: 10px;
@@ -34,6 +36,23 @@ main, .results{
     align-items: center;
     gap: 20px;
     background-color: hsl(189, 41%, 97%);
+}
+.field > p, #customContainer p{ display: none;}
+.field.failed .inputContainer, #customContainer.failed #customPrice{
+    outline: 2px solid hsl(17, 55%, 65%);
+}
+.field.failed {
+    position: relative;
+}
+.field.failed > p{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    color: hsl(17, 55%, 65%);
+}
+.field.focused .inputContainer, #customPrice.focused{
+    outline: 2px solid hsl(172, 67%, 45%);
 }
 input{
     padding: 0 15px;
@@ -82,6 +101,21 @@ legend{
     top: 0;
     z-index: 0;
 }
+#customContainer{
+    position: relative;
+}
+#customContainer.failed p{
+    display: inline;
+    position: absolute;
+    top: -1.25em;
+    color: hsl(17, 55%, 65%);
+}
+#customPrice{
+    height: 100%;
+}
+input:focus{
+    outline: none;
+}
 input:hover ~ .background{
     background-color: hsl(185, 41%, 84%);
 }
@@ -97,7 +131,7 @@ input:checked ~ p,
 input:focus ~ p{
     color: hsl(183, 100%, 15%);
 }
-.inputContainer, .tipPercentage, .resetButton{
+.inputContainer, .tipPercentage, .resetButton, input{
     border-radius: 7px;
 
     -webkit-border-radius: 7px;
@@ -138,6 +172,9 @@ input:focus ~ p{
     background-color: hsl(172, 67%, 45%);
     font-size: 24px;
     color: hsl(183, 100%, 15%);
+}
+.resetButton:hover{
+    background-color: hsl(185, 41%, 84%);
 }
 
 .attribution { font-size: 11px; text-align: center; position: fixed; bottom: 0; right: 0;left: 0; background-color: #ffffff80; backdrop-filter:blur(10px);}
