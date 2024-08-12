@@ -6,6 +6,9 @@
 }
 body{
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     color: hsl(186, 14%, 43%);
     background-color: hsl(185, 41%, 84%);
@@ -15,7 +18,14 @@ body{
     margin: 0 auto;
     padding: 2.5em 0;
 }
+main{
+    width: 100%;
+    max-width: 684px;
+    margin: 0 auto;
+    display: flex;
 
+    gap: 1.5em;
+}
 main, .results{
     padding: 1.5em;
     border-radius: 20px;
@@ -142,7 +152,6 @@ input:focus ~ p{
 
 .results{
     padding-top: 2em;
-    margin-top: 1.5em;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -179,3 +188,10 @@ input:focus ~ p{
 
 .attribution { font-size: 11px; text-align: center; position: fixed; bottom: 0; right: 0;left: 0; background-color: #ffffff80; backdrop-filter:blur(10px);}
 .attribution a { color: hsl(228, 45%, 44%); }
+
+@media only screen and (max-width:686px) {
+    main{
+        max-width: 432px;
+        flex-direction: column;
+    }
+}

@@ -92,4 +92,5 @@ resetButton.addEventListener("click",()=>{
     percentageButtons.forEach(button =>{
         button.getElementsByTagName("input")[0].checked = false
     })
+    selectedTip = -1
 })
